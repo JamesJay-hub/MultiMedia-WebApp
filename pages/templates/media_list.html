@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Media List</h2>
+    {% if media_files %}
+        <ul>
+        {% for media in media_files %}
+            <li>
+                <strong>{{ media.title }}</strong> by {{ media.user.username }} on {{ media.uploaded_at|date:"Y-m-d H:i" }}<br>
+                {% if media.media_type == "image" %}
+                    <img src="{{media.file.url}}" alt="{{ media.title }}" width="250">
+                {% elif media.media_type == "video" %}
+                    <video width="320" height="240" controls>
+                        <source src="{{ media.file.url }}">
+                        Your browser does not support the video tag.
+                    </video>
+                {% elif media.media_type == "audio" %}
+                    <audio controls>
+                        <source src="{{ media.file.url }}">
+                        Your browser does not support the audio element.
+                    </audio>
+                {% endif %}
+            </li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No media files found.</p>
+    {% endif %}
+{% endblock %}

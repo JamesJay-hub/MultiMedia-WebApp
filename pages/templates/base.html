@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Multimedia-WebApp</title>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <a href="{% url 'index' %}">Home</a>
+                <a href="{% url 'media_list' %}">Media List</a>
+                <a href="{% url 'upload_media' %}">Upload</a>
+                {% if user.is_authenticated %}
+                    <span>Welcome, {{ user.username }}</span>
+                    <a href="{% url 'logout' %}">Logout</a>
+                {% else %}
+                    <a href="{% url 'login' %}">Login</a>
+                    <a href="{% url 'register' %}">Register</a>
+                {% endif %}
+            </nav>
+        </header>
+        <hr>
+        <div>
+            {% block content %}
+            {% endblock %}
+        </div>
+    </body>
+</html>
