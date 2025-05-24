@@ -23,6 +23,15 @@ class MediaFile(models.Model):
         return f"{self.title} - {self.user.username}"
     
 
+    # class Registration(models.Model):
+    #     username = models.CharField(max_length=30)
+    #     email = models.EmailField(100)
+    #     password = models.CharField(widget=models.PasswordInput)
+    #     confirm_password = models.CharField(widget=models.PasswordInput)
+
+
+    
+
 
         
 

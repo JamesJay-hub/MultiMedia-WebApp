@@ -4,6 +4,7 @@ from django.contrib.auth.decorators import login_required
 from .forms import MediaUploadForm
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.views import LogoutView
 
 def index(request):
      return render(request, 'index.html')
@@ -46,8 +47,7 @@ def register(request):
         form = UserCreationForm()
     return render(request, 'register.html', {'form': form})
 
-def logout(request):
-    return redirect('login')
+
         
 
     

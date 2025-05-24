@@ -8,7 +8,8 @@ urlpatterns = [
     path('media', views.media_list, name='media_list'),
     path('upload/', views.upload_media, name='upload_media'),
     path('login/', LoginView.as_view(template_name='login.html'), name='login'),  
-    path('logout/', LogoutView.as_view(next_page='index.html'), name='logout'),  
+    path('logout/', LogoutView.as_view(), name='logout'),  
     path('register/', views.register, name='register'),  
 
 ]
+# template_name='login.html'
