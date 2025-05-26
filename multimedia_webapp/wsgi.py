@@ -15,5 +15,5 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'multimedia_webapp.settings')
 
 application = get_wsgi_application()
 
-#   Vercel Allows Django to connect to Vercel
-app = application
+# #   Vercel Allows Django to connect to Vercel
+# app = application
