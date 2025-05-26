@@ -11,15 +11,7 @@ def index(request):
 
 @login_required
 def media_list(request):
-    # category = request.GET.get('category')
-    # tag = request.GET.get('tag')
     media_files = MediaFile.objects.all()
-
-    # if category:
-    #         media_files = media_files.filter(categories__name=category)
-    # if tag:
-    #     media_files = media_files.filter(tags__name=tag)
-
     return render(request, 'media_list.html', {'media_files': media_files}) 
 
 @login_required

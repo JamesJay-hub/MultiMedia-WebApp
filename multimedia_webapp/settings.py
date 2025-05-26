@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-z*4n4rs4_^m0_y7q8tvbp+v1$a-k=%@wlfyp-+wxybu_b&10vr'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ['.vercel.app']
 
 
 # Application definition
@@ -135,18 +135,5 @@ LOGIN_URL = '/login'
 LOGIN_REDIRECT_URL = '/' #after login user get redirected here
 LOGOUT_REDIRECT_URL = '/' #after logout user go back to the homepage
 
-CSRF_TRUSTED_ORIGINS = ["https://multimedia-webapp.onrender.com"] # Added csrf as trusted origins 
-
-
-
-# # My Storage File on AWS S3
-# INSTALLED_APPS += ['storages']
-
-# AWS_ACCESS_KEY_ID = ''
-# AWS_SECRET_ACCESS_KEY = ''
-# AWS_STORAGE_BUCKET_NAME = ''
-# AWS_S3_REGION_NAME = ''
-# AWS_DEFAULT_ACL = ''
-# AWS_S3_ADDRESSING_STYLE = "virtual"
-
-# DEFAULT_FILE_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
+# # Added csrf as trusted origins for render
+# CSRF_TRUSTED_ORIGINS = ["https://multimedia-webapp.onrender.com"]  
